@@ -1,9 +1,11 @@
-require 'yajl/json_gen'
+require 'typhoeus'
+require 'yajl/json_gem'
 
 module UrbanAirship
-  def self.new(opts={})
-    UrbanAirship::Client.new(opts)
+  def self.new(application_key,application_secret)
+    UrbanAirship::Client.new(application_key,application_secret)
   end
 end
 
 require 'urbanairship/client'
+require 'urbanairship/device_token'
