@@ -43,7 +43,7 @@ module UrbanAirship
       params[:method] ||= :get
       params[:username] = @application_key
       params[:password] = @application_master_secret
-      params[:proxy] = "localhost:8888"
+      #params[:proxy] = "localhost:8888"
       if params[:body]
         params[:headers] ||= { :'Content-Type' => 'application/json'}
         params[:body] = params[:body].to_json
