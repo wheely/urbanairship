@@ -15,6 +15,13 @@ describe UrbanAirship::Client do
       lambda {@client.device_tokens('not a token')}.should raise_error
     end
   end
+  describe "#delete_device_token" do
+    it "should delete a valid device" do
+      @client.should_receive(:request).and_return({})
+      result = @client.delete_device_token('45435')
+      result.should == true
+    end
+  end
   describe "#get_device_token" do
     it "should retrieve a valid token" do
       response = {

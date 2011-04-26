@@ -18,6 +18,11 @@ module UrbanAirship
       true
     end
     
+    def delete_device_token(device_token)
+      delete("/api/device_tokens/#{device_token}")
+      true
+    end
+    
     def get_device_token(device_token)
       data = get("/api/device_tokens/#{device_token}")
       return UrbanAirship::DeviceToken.new(self,data)
@@ -37,6 +42,9 @@ module UrbanAirship
     end
     def post(url, params={})
       request(url, params.merge(:method => :post))
+    end
+    def delete(url, params={})
+      request(url, params.merge(:method => :delete))
     end
     
     def request(url, params)
