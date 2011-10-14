@@ -13,10 +13,10 @@ module UrbanAirship
       @@base_uri
     end
 
-    def initialize(application_key, application_master_secret, type = "ios")
+    def initialize(application_key, application_master_secret, device_type)
       @application_key = application_key
       @application_master_secret = application_master_secret
-      @path = URL_MAPPER[type]
+      @path = URL_MAPPER[device_type]
     end
 
     def device_tokens(device_token, opts={})
