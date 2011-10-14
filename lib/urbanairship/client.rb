@@ -5,7 +5,7 @@ module UrbanAirship
     @@base_uri = 'https://go.urbanairship.com'
 
     URL_MAPPER = {
-      "android" => "apis",
+      "android" => "apids",
           "ios" => "device_tokens"
     }
 
