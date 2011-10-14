@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe UrbanAirship::Client do
   before(:each) do
-    @client = UrbanAirship::Client.new('wopsi','dupsi')
+    @client = UrbanAirship::Client.new('wopsi','dupsi', 'ios')
   end
   describe "#device_tokens" do
     it "should register a valid device" do
@@ -25,16 +25,16 @@ describe UrbanAirship::Client do
   describe "#get_device_token" do
     it "should retrieve a valid token" do
       response = {
-          "device_token" => "420958A717C04756A37851A8667C69637604F59DF1D23B3C91720051D73A096B", 
-          "last_registration" => "2011-04-11 10:20:50", 
-          "tz" => nil, 
-          "tags" => [], 
-          "alias" => "123f", 
+          "device_token" => "420958A717C04756A37851A8667C69637604F59DF1D23B3C91720051D73A096B",
+          "last_registration" => "2011-04-11 10:20:50",
+          "tz" => nil,
+          "tags" => [],
+          "alias" => "123f",
           "quiettime" => {
-              "start" => nil, 
+              "start" => nil,
               "end" => nil
-          }, 
-          "active" => true, 
+          },
+          "active" => true,
           "badge" => 0
       }
       @client.should_receive(:request).and_return(response)
